@@ -1,0 +1,47 @@
+Elasticsearch:
+
+JDK: Works best with 1.8 with G1GC garbage collection
+JVM: Oracle or OpenJDK
+
+Heap memory: Half of machine’s RAM and Max 31 GB
+/etc/default/elasticsearch > ES_HEAP_SIZE=10g
+
+Memory Locking: RAM
+/etc/default/elasticsearch > MAX_LOCKED_MEMORY=unlimited
+
+File Descriptor Limit: 65535 or 64k
+/etc/default/elasticsearch > MAX_OPEN_FILES=65535
+
+FileSystem: Ext4 or XFS [more than 1 TB per node]
+
+FS Store: NIOFS , elasticsearch.yml > index.store.type: niofs
+
+Cluster Name : To be set.
+elasticsearch.yml > cluster.name: rtr-lmrates
+
+Node Name: To be set.
+elasticsearch.yml > node.name: <hostname>
+
+Discovery Hosts: To be set.
+elasticsearch.yml > discovery.zen.ping.unicast.hosts: [“1.1.1.1”,”2.2.2.2”]
+
+Minimum Master Nodes: 2 - node cluster
+elasticsearch.yml > discovery.zen.minimum_master_nodes : 2
+
+Slow Query Logs: TBD
+
+Index Buffer Size: default 10% of heap.
+In the case of too many indexing operations with high ingest rate into Elasticsearch,
+elasticsearch.yml : > indices.memory.index_buffer_size: 20%
+
+Index Refresh Interval : Is it really realtime ?
+elasticsearch.yml : > index.refresh_interval: 2m
+
+Caches: TBD
+
+Query cache - default of 10% of  heap memory
+shard request cache 
+field data cache - max 30% of heap memory
+
+Hardware: 
+Storage : IOPS > SSD preferable to Hard Disks
