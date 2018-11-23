@@ -1,0 +1,26 @@
+Logstash:
+—————-
+
+Node Name: To be set.
+logstash.yml > node.name: <hostname>
+
+Persistent Queues: To handle high ingest rate and at-least-once delivery
+logstash.yml > [ settings TODO]
+queue.type :persisted
+queue.max_bytes: 3gb
+
+Load Balancing with HAProxy:
+TODO
+Sample configuration of Haproxy:
+
+listen hanode-1 1.1.1.1:7000
+    mode tcp
+    balance least conn
+    server logstash-node1 2.2.2.2:7000 check
+    server logstash-node2 3.3.3.3:7000 check
+
+Keepalived to be used to avoid Single Point Of Failure with HAProxy
+
+Reading from Kafka [Input plugin]:
+Run multiple Logstash instances with the same group_id to spread the load across instances.
+Num of threads to be equal to the number of partitions
