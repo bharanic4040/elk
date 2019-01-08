@@ -1,0 +1,42 @@
+How many nodes for elastic to start with
+
+Licensing depends on ram above 128 gb or cpu cores
+
+Any licensing for log stash or kibana
+
+
+retention - 4 days
+msgs/sec - 300 msgs/min
+supported msgs/sec - 30000 - timeseries
+
+1000s of nodes -clusters
+
+KIbana graphing vs Grafana
+Canvas - custom dashboard
+
+Grafana - open source purely
+
+>>>>>>>>>>>>>>>>>>>
+
+3 -nodes - min subscription
+only for master and data nodes
+
+X-Pack:
+———-
+gold:
+Authn/Auth,
+Security,
+
+5300$/node/year
+
+platinum:
+
+24/7 support , 1hr response time , ML,Field/Doc level security,Cross Cluster Search /Replication[beta]
+
+7900$/node/year 
+
+
+Elastic cloud enterprise - in private datacenter , in chunks of 128 GB
+
+
+index template - Rollover API to delete older indices
