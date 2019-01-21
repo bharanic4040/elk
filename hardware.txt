@@ -1,0 +1,18 @@
+
+OS - 64-bit RHEL 7
+  
+RAM 
+---
+Elastic - 64 GB
+Logstash - 32 GB
+Kibana - 32 GB
+
+CPU Cores - 8 Core CPU atleast
+
+Network - 1 GbE
+
+Disk Space
+----------
+Elastic: 128 GB
+Logstash: 32 GB
+Kibana: 32 GB
